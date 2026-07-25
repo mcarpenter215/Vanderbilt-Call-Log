@@ -1,49 +1,3 @@
-Here is the updated design system and Streamlit application re-engineered around **Vanderbilt University's official brand standards**.
-
----
-
-## Vanderbilt Brand Palette Mapping
-
-| Brand Color Name | Color Hex | Pantone / Specification | Role in Call Log UI |
-| --- | --- | --- | --- |
-| **Vanderbilt Black** | `#1C1C1C` | Pantone Black C | Primary background, card base, and high-contrast structural panels |
-| **Flat Gold** | `#CFAE70` | Pantone 4024 C | Accent borders, badges, key decision highlights, and primary headers |
-| **Metallic / Highlight Gold** | `#ECB748` | Pantone 871 C | Highlighting critical laboratory findings and callout text |
-| **Oak Gold** | `#946E24` | Secondary Saturated | Section dividers and subtle borders |
-| **Vanderbilt Cream** | `#F5F3EF` | Neutral Secondary | Body text and high-legibility readability surface |
-| **Critical Red** | `#991B1B` | Alert Accent | STAT pages and major acute transfusion reaction alerts |
-
----
-
-## Visual HTML/CSS Card Specification
-
-When exported or displayed in dark-mode readers, your call logs will utilize Vanderbilt's high-contrast Gold-on-Black identity:
-
-```html
-<div style="background-color: #1C1C1C; border-left: 6px solid #CFAE70; border-top: 1px solid #333333; border-right: 1px solid #333333; border-bottom: 1px solid #333333; padding: 20px; border-radius: 6px; font-family: system-ui, sans-serif; color: #F5F3EF; margin-bottom: 20px;">
-  <div style="display: flex; justify-content: space-between; align-align: center; border-bottom: 1px solid #946E24; padding-bottom: 10px; margin-bottom: 14px;">
-    <span style="font-size: 1.15em; font-weight: bold; color: #CFAE70; letter-spacing: 0.5px;">MRN: 048783659 — 33F, 25w Pregnant (Major ABO Mismatch)</span>
-    <span style="background-color: #CFAE70; color: #1C1C1C; padding: 3px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 800; letter-spacing: 1px;">STAT CONSULT</span>
-  </div>
-  
-  <p style="margin-bottom: 6px; color: #CFAE70; font-weight: 600;">Executive Decision & Strategy:</p>
-  <div style="background-color: #262626; border-left: 3px solid #ECB748; padding: 12px; border-radius: 4px; margin-bottom: 14px; color: #FFFFFF;">
-    <u><strong>Denied Eculizumab and Therapeutic Plasma Exchange.</strong></u> Advised aggressive IV hydration, forced diuresis, and monitoring for renal failure/DIC. Approved A-negative RBCs post-DAT negative verification.
-  </div>
-
-  <p style="margin-bottom: 4px; color: #CFAE70; font-weight: 600;">🔬 Mechanistic Breakdown:</p>
-  <p style="color: #F5F3EF; font-size: 0.95em; line-height: 1.5;">Host anti-B IgM fixed classical complement cascade $\to$ C5b-9 MAC assembly $\to$ hyperacute intravascular lysis. Administering Eculizumab 24 hours post-transfusion when DAT is strictly negative provides zero target substrate.</p>
-</div>
-
-```
-
----
-
-## Updated Streamlit Application Code (`app.py`)
-
-Replace your existing `app.py` script with this version to apply the official Vanderbilt Commodores aesthetic directly to your interactive generator interface.
-
-```python
 import streamlit as st
 
 # 1. Page Configuration
@@ -214,5 +168,3 @@ with col_output:
 * 💡 {board_pearls}
 """
     st.code(raw_md, language="markdown")
-
-```
